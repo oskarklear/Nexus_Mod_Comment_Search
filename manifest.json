@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Nexus Mods Comment Search",
+    "version": "1.0",
+    "description": "Parses and allows searching of comments on Nexus Mods mod pages.",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "storage",
+      "tabs"
+    ],
+    "host_permissions": [
+      "*://*.nexusmods.com/*"
+    ],
+    "action": {
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.nexusmods.com/*/mods/*?tab=posts*"],
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["parser_window.html"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+}

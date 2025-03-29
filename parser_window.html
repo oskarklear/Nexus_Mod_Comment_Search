@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nexus Mods Comment Parser</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    #parsingStatus { margin-top: 10px; font-weight: bold; }
+    #parsingStatus.failed { color: red; }
+    #parsingStatus.done { color: green; }
+    #parsingStatus.parsing { color: orange; }
+    #searchContainer { margin-top: 20px; display: none; }
+    #results { margin-top: 10px; }
+    .result-item { margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    .comment-text { margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Nexus Mods Comment Parser</h1>
+  <button id="parseButton">Parse Comments</button>
+  <div id="parsingStatus"></div>
+  <div id="searchContainer">
+    <h2>Search Comments</h2>
+    <input type="text" id="searchQuery" placeholder="Enter search term">
+    <button id="searchButton">Search</button>
+    <div id="results"></div>
+  </div>
+  <script src="parser_window.js"></script>
+</body>
+</html>
